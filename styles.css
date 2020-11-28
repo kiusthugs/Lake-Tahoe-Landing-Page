@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+
+header {
+  background-image: 
+  linear-gradient(to bottom, rgba(255,165,0, .5), rgba(255,255,255, .05)), 
+  linear-gradient(to top,  rgba(255,255,255, 1),  rgba(255,165,0, .05)),
+  url('img/mountains.jpg');
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: 850px;
+  color: white;
+}
+
+h1 {
+  margin:0;
+  border-bottom: solid 1px white;
+  display: inline;
+}
+
+.center {
+  padding-top: 200px;
+}
+
+.center p {
+  font-size: 2.8em;
+  margin-top: 20px;
+}
+
+.center img {
+  width: 40px;
+  height: 40px;
+  margin-top: 125px;
+}
+
+/* create space on the side and center, applied border here so it will span the full width and the rest of the content is shorter than it */
+.container {
+  width: 75%;
+  margin: 0 auto;
+  border-top: solid 1px grey;
+}
+
+/*Make content inside the .container smaller*/
+
+.small {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.intro p {
+  font-size: 1.6em;
+  margin: 40px 0 40px 0;
+}
+
+.intro a {
+  border-bottom: solid 2px orange;
+  padding: 10px;
+  font-size: 1.35em;
+  display: inline-block;
+}
+
+/* .bear {
+  height: 550px;
+  border-top: solid 10px orange;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #888888;
+  color: white;
+} */
+
+.wildlife {
+  text-align: center;
+  margin: 80px 0 80px 0;
+}
+.wildlife a {
+  border-bottom: solid 2px orange;
+  padding: 10px;
+  font-size: 1.35em;
+  display: inline-block;
+}
+
+ a{
+  text-decoration: none;
+  color: orange;
+}
+
+
+.intro a:hover,
+.wildlife a:hover {
+  color: rgba(255,165,0, .4);
+  border-bottom: solid 2px rgba(255,165,0, .4);
+}
+a:hover {
+  color: rgba(255,165,0, .4);
+}
+
+a:visited {
+  color: lightblue;
+  border-bottom: lightblue;
+}
+
+
+
+
+/*
+- the bear image
+- the text wasn't staying centered, saw that the final product contained padding to move the text to the center, figured out that I need to have the image on the div that contains the content, I accidentally had a div within a div that was unnecessary 
+- used padding with % values for the content to adjust the images size responsively to the browser window size.
+- when getting to a smaller browser window, just make the values smaller for padding shown in the media queries below
+-setting the image on the parent div of the content and putting padding to change the image size makes the text not overflow outside the div as it adjusts the containers size to accommodate the text length 
+- think of the div as the box model
+- the h2 and p is the content area
+- we adjust the padding for image size
+- add border for styling
+*/
+
+.bear-info {
+  background-image: url('img/bear.jpg');
+  background-size: cover;
+  background-position: center;
+  font-size: 1.2em;
+  border-top: solid 10px orange;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #888888;
+  color: white;
+  padding: 18% 24%;
+}
+
+.extra {
+  border-top: solid 1px grey;
+  border-bottom: solid 1px grey;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/*Image was initially big so I made a rule to set the img the full width of it's parent container instead of overwriting its space with its preset width and height*/
+
+.col img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.col li {
+  margin: 6px;
+}
+
+.attractions-one {
+  width: 50%;
+}
+
+.attractions-two {
+  width: 50%;
+}
+
+/* for padding to create gutters for the columns, ensure that you have all elements selected to have the box-sizing property set to border-box;*/
+.col {
+  float: right;
+  padding: 0 25px 0 25px;
+  font-size: 1.1em;
+}
+
+.col h3 {
+  font-size: 1.45em;
+}
+
+.attractions-two span {
+  color: orange;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  text-align: center;
+  border-bottom: solid 10px orange;
+  padding: 50px 0 50px 0;
+}
+
+@media only screen and (min-width: 1150px) {
+  .container {
+    max-width: 1150px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    border: none;
+  }
+  header {
+    height: 500px;
+  }
+
+  header a {
+    display: none;
+  }
+
+  .intro {
+    margin: 40px;
+  }
+  
+  .center {
+    padding-top: 100px;
+  }
+
+  .container {
+    border-top: none;
+    width: 100%;
+  }
+
+  .small p {
+    font-size: 1.15em;
+  }
+/* don't go any less than 400px though make the height adjust to 100% of the container*/
+
+
+  .bear-info {
+    font-size: .95em;
+    padding: 14% 20%;
+  }
+
+  .extra {
+    border-top: none;
+    padding: 0;
+  }
+
+  .col {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .wildlife {
+    margin: 40px 0;
+  }
+}
